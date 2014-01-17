@@ -1,0 +1,14 @@
+target
+*.class
+*.js~
+*.js#
+*.md#
+*.md~
+*.mdt~
+*.mdt#
+*.iml
+*.#*
+*.idea
+.DS_Store
+build.local.properties
+

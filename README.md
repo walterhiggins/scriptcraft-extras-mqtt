@@ -26,24 +26,22 @@ this (on Linux)...
 Once started in this way, you can connect to an MQTT broker using the following code...
 
     var mqtt = require('sc-mqtt');
-    var client = mqtt.connect('localhost:1883', {
-      clientid: 'sc-mqtt',
+    var client = mqtt.connect('localhost:1883', 'sc-mqtt', {
       keepalive: 10000
     });
     client.publish('scriptcraft','loaded');
     client.subscribe('arduino');
 
-    client.on('connectionLost', function(cause){
+    client.onConnectionLost(function(cause){
        // optional callback to handle connection loss
     });
 
-    client.on('messageArrived', function(topic, message){
+    client.onMessageArrived(function(topic, message){
        // handle incoming messages here.
        var bytes = message.payload;
-       // see <http://git.eclipse.org/c/paho/org.eclipse.paho.mqtt.java.git/tree/org.eclipse.paho.client.mqttv3/src/main/java/org/eclipse/paho/client/mqttv3/MqttMessage.java>
     });
 
-    client.on('deliveryComplete', function(deliveryToken){
+    client.onDeliveryComplete(function(deliveryToken){
        // optional callback to handle completion of outgoing messages
        // (message ACK'd by receiver)
     });
@@ -59,5 +57,9 @@ Example - publishing a MQTT message when a minecraft block is broken...
                        [1],           // payload
                        1);             // QoS (1 is send at least once)
     });
+
+For details of the message object received in the `messageArrived` callback see 
+
+<http://git.eclipse.org/c/paho/org.eclipse.paho.mqtt.java.git/tree/org.eclipse.paho.client.mqttv3/src/main/java/org/eclipse/paho/client/mqttv3/MqttMessage.java>
 
 [paho]: http://git.eclipse.org/c/paho/org.eclipse.paho.mqtt.java.git/
