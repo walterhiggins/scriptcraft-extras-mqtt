@@ -26,39 +26,43 @@ this (on Linux)...
 Once started in this way, you can connect to an MQTT broker using the following code...
 
     var mqtt = require('sc-mqtt');
-    var client = mqtt.connect('localhost:1883', 'sc-mqtt', {
-      keepalive: 10000
-    });
+    var client = mqtt.client('tcp://localhost:1883','exampleClient');
+    client.connect({
+          keepAliveInterval: 10000
+          });                
     client.publish('scriptcraft','loaded');
     client.subscribe('arduino');
 
-    client.onConnectionLost(function(cause){
-       // optional callback to handle connection loss
-    });
-
+    // callback to use if you want to receive and handle messages
     client.onMessageArrived(function(topic, message){
        // handle incoming messages here.
        var bytes = message.payload;
     });
-
+    // the following callbacks are optional 
     client.onDeliveryComplete(function(deliveryToken){
        // optional callback to handle completion of outgoing messages
        // (message ACK'd by receiver)
     });
+    client.onConnectionLost(function(cause){
+       // optional callback to handle connection loss
+    });
+
 
 sc-mqtt uses the [Eclipse Paho MQTTV3 Client][paho] library. 
 
 Example - publishing a MQTT message when a minecraft block is broken...
 
     var mqtt = require('sc-mqtt');
-    var client = mqtt.connect();
+    var client = mqtt.client(); // default is localhost 1883
+    client.connect();
     events.on('block.BlockBreakEvent', function (listener, event){
-        client.publish('blockbreak',  // topic
-                       [1],           // payload
-                       1);             // QoS (1 is send at least once)
+        client.publish('minecraft',  // topic
+                       'blockbreak', // payload
+                       1,            // QoS (1 is send at least once) 
+                       true );       // broker should retain message
     });
 
-For details of the message object received in the `messageArrived` callback see 
+For details of the message object received in the `messageArrived` callback see ...
 
 <http://git.eclipse.org/c/paho/org.eclipse.paho.mqtt.java.git/tree/org.eclipse.paho.client.mqttv3/src/main/java/org/eclipse/paho/client/mqttv3/MqttMessage.java>
 
