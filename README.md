@@ -9,11 +9,11 @@ conjunction with ScriptCraft and is not a replacement for ScriptCraft.
 
 To Use
 ------
-
 The sc-mqtt.jar file which this project builds must be included in the
-classpath when starting up bukkit. Copy the sc-mqtt.jar file into the
-craftbukkit directory. The craftbukkit server must be started like
-this (on Linux)...
+classpath when starting up bukkit. (You can download the library from
+<http://scriptcraftjs.org/download/extras/mqtt/> ) Copy the
+sc-mqtt.jar file into the craftbukkit directory. The craftbukkit
+server must be started like this (on Linux)...
 
     java -cp scmqtt.jar:craftbukkit.jar org.bukkit.craftbukkit.Main
 
@@ -47,8 +47,10 @@ Once started in this way, you can connect to an MQTT broker using the following 
        // optional callback to handle connection loss
     });
 
-
-sc-mqtt uses the [Eclipse Paho MQTTV3 Client][paho] library. 
+You will need to grab a version of ScriptCraft from 2014-01-17 or
+later here <http://scriptcraftjs.org/download> if you don't want to
+build from source. sc-mqtt uses the [Eclipse Paho MQTTV3 Client][paho]
+library. 
 
 Example - publishing a MQTT message when a minecraft block is broken...
 
