@@ -15,11 +15,11 @@ classpath when starting up bukkit. (You can download the library from
 sc-mqtt.jar file into the craftbukkit directory. The craftbukkit
 server must be started like this (on Linux)...
 
-    java -cp scmqtt.jar:craftbukkit.jar org.bukkit.craftbukkit.Main
+    java -cp sc-mqtt.jar:craftbukkit.jar org.bukkit.craftbukkit.Main
 
 ... on Windows, use the following command...
 
-    java -cp scmqtt.jar:craftbukkit.jar org.bukkit.craftbukkit.Main
+    java -cp sc-mqtt.jar:craftbukkit.jar org.bukkit.craftbukkit.Main
 
 ... (the path separator character is different on each operating system, it's `:` on linux and `;` on windows )
 
