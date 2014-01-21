@@ -54,13 +54,13 @@ The flow of data from Arduino to Minecraft is...
 
     ... once verified you can quit the `mosquitto_sub` process.
 
-  6. Copy the above arduino-example1.js file to the scriptcraft/plugins/ directory.
+ 6. Copy the above arduino-example1.js file to the scriptcraft/plugins/ directory.
 
-  7. Start up the Craftbukkit minecraft server like this...
+ 7. Start up the Craftbukkit minecraft server like this...
 
-         java -classpath sc-mqtt.jar:craftbukkit.jar org.bukkit.craftbukkit.Main
+        java -classpath sc-mqtt.jar:craftbukkit.jar org.bukkit.craftbukkit.Main
 
-  8. Press the pushbutton to switch from day to night, dusk to dawn and vice versa.
+ 8. Press the pushbutton to switch from day to night, dusk to dawn and vice versa.
 
 [mosq]: http://mosquitto.org/download/
 [arddr]: http://arduino.cc/en/Tutorial/DigitalReadSerial
