@@ -1,5 +1,7 @@
 # Basic Arduino to Minecraft Interaction
 
+<http://www.youtube.com/watch?feature=player_embedded&v=VPSBY9WUVHg>
+
 ## What you'll need...
 
 ### Hardware
