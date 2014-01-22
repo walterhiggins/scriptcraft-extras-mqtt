@@ -8,7 +8,7 @@ client.subscribe('arduino1');
 
 client.onMessageArrived( function(topic,message){
     var msgText = '' + new JavaString(message.payload);
-    if (topic == 'arduino1' && msgText == 'BUTTON PRESSED'){
+    if (topic == 'arduino1' && msgText.equals('BUTTON PRESSED') ){
         /*
           change the time in each of the server's worlds.
           Day becomes night, night becomes day.
