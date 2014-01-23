@@ -5,7 +5,7 @@ This example uses a photo-resistor, Arduino, MQTT and Scriptcraft to change the 
 As with the previous example, you'll need...
 
  1. An Arduino with Resistor, Wires, Photo-Resistor and USB Cable.
- 2. A Running MQTT Broker - I recommend [mosquitto].
+ 2. A Running MQTT Broker - I recommend [mosquitto][mq].
  3. An operating system with the `tail` command - ( You can get this with [CgyWin][cw] for Windows).
  4. An MQTT publish command - I recommend `mosquitto_pub` as it supports piping from STDIN.
  5. [CraftBukkit][cb] and [ScriptCraft][sc] 
@@ -29,4 +29,4 @@ As with the previous example, you'll need...
 [cw]: http://cywin.org/
 [cb]: http://dl.bukkit.org/
 [sc]: https://github.com/walterhiggins/ScriptCraft/releases
-
+[mq]: http://mosquitto.org/
