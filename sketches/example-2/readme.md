@@ -1,5 +1,11 @@
 # Using a Photo-Resistor (LDR) to change the time of day in Minecraft
 
+## Video demo
+<http://www.youtube.com/watch?v=ypbFBXCOg_k>
+
+## Schematic
+![Schematic Diagram][sd]
+
 This example uses a photo-resistor, Arduino, MQTT and Scriptcraft to change the time of day in Minecraft.
 
 As with the previous example, you'll need...
@@ -18,12 +24,6 @@ As with the previous example, you'll need...
  3. At another prompt start piping the Arduino ouput into mosquitto `tail -f /dev/tty.usbmodemfd131 | mosquitto_pub -t arduino-light -l` .
  4. Drop the arduino-light.js file into your scriptcraft/plugins/ directory and start CraftBukkit. `java -cp sc-mqtt.jar:craftbukkit.jar org.bukkit.craftbukkit.Main` .
  5. Change the light (cover with hand or for best effect use an indoor dimmer) to see changed time in the game.
-
-## Video demo
-<http://www.youtube.com/watch?v=ypbFBXCOg_k>
-
-## Schematic
-![Schematic Diagram][sd]
 
 [sd]: ArduinoJumperSketch.jpg
 [cw]: http://cywin.org/
