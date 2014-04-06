@@ -36,6 +36,7 @@ The flow of data from Arduino to Minecraft is...
 
 ... Serial output from the Arduino is piped into a MQTT message queue. Scriptcraft can listen for incomming MQTT messages.
 
+ 0. Install [CraftBukkit][craftbukkit] and [ScriptCraft][scriptcraft]
  1. Start `mosquitto` at a command prompt.
  2. Launch the Arduino IDE then open the above sketch and upload it to the arduino.
  3. Open the serial monitor (this is important - on a Mac at least, I can't tail -f without the Serial monitor window being open - I don't know why that is)
@@ -58,15 +59,15 @@ The flow of data from Arduino to Minecraft is...
 
  6. Copy the above arduino-example1.js file to the scriptcraft/plugins/ directory.
 
- 7. Start up the Craftbukkit minecraft server like this...
+ 7. Copy sc-mqtt.jar to CraftBukkit directory.
 
-        java -classpath sc-mqtt.jar:craftbukkit.jar org.bukkit.craftbukkit.Main
+ 8. Start up the Craftbukkit minecraft server like this...
 
- 8. Press the pushbutton to switch from day to night, dusk to dawn and vice versa.
+        java -Xmx1024M -classpath sc-mqtt.jar:craftbukkit.jar org.bukkit.craftbukkit.Main
+
+ 9. Press the pushbutton to switch from day to night, dusk to dawn and vice versa.
 
 [mosq]: http://mosquitto.org/download/
 [arddr]: http://arduino.cc/en/Tutorial/DigitalReadSerial
-
-
-
-
+[scriptcraft]: https://github.com/walterhiggins/ScriptCraft
+[craftbukkit]: http://wiki.bukkit.org/Setting_up_a_server

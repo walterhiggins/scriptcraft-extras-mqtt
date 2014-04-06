@@ -9,6 +9,7 @@ target
 *.iml
 *.#*
 *.idea
+*.swp
 .DS_Store
 build.local.properties
 
