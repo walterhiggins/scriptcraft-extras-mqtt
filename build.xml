@@ -23,7 +23,7 @@
   <target name="paho-setup" depends="init" unless="paho.present">
     <exec executable="git">
       <arg value="clone"/>
-      <arg value="git://git.eclipse.org/gitroot/paho/org.eclipse.paho.mqtt.java.git"/>
+      <arg value="https://github.com/eclipse/paho.mqtt.java.git"/>
       <arg value="${paho.dir}"/>
     </exec>
     <exec executable="mvn" dir="${paho.dir}">
