@@ -38,7 +38,7 @@ Once started in this way, you can connect to an MQTT broker using the following 
        // handle incoming messages here.
        var bytes = message.payload;
     });
-    // the following callbacks are optional 
+    // the following callbacks are optional
     client.onDeliveryComplete(function(deliveryToken){
        // optional callback to handle completion of outgoing messages
        // (message ACK'd by receiver)
@@ -50,7 +50,7 @@ Once started in this way, you can connect to an MQTT broker using the following 
 You will need to grab a version of ScriptCraft from 2014-01-17 or
 later here <http://scriptcraftjs.org/download> if you don't want to
 build from source. sc-mqtt uses the [Eclipse Paho MQTTV3 Client][paho]
-library. 
+library.
 
 Example - publishing a MQTT message when a minecraft block is broken...
 
@@ -60,12 +60,12 @@ Example - publishing a MQTT message when a minecraft block is broken...
     events.on('block.BlockBreakEvent', function (listener, event){
         client.publish('minecraft',  // topic
                        'blockbreak', // payload
-                       1,            // QoS (1 is send at least once) 
+                       1,            // QoS (1 is send at least once)
                        true );       // broker should retain message
     });
 
 For details of the message object received in the `messageArrived` callback see ...
 
-<http://git.eclipse.org/c/paho/org.eclipse.paho.mqtt.java.git/tree/org.eclipse.paho.client.mqttv3/src/main/java/org/eclipse/paho/client/mqttv3/MqttMessage.java>
+<https://github.com/eclipse/paho.mqtt.java/blob/master/org.eclipse.paho.client.mqttv3/src/main/java/org/eclipse/paho/client/mqttv3/MqttMessage.java>
 
-[paho]: http://git.eclipse.org/c/paho/org.eclipse.paho.mqtt.java.git/
+[paho]: https://github.com/eclipse/paho.mqtt.java.git
