@@ -19,7 +19,7 @@ server must be started like this (on Linux)...
 
 ... on Windows, use the following command...
 
-    java -cp sc-mqtt.jar:craftbukkit.jar org.bukkit.craftbukkit.Main
+    java -cp sc-mqtt.jar;craftbukkit.jar org.bukkit.craftbukkit.Main
 
 ... (the path separator character is different on each operating system, it's `:` on linux and `;` on windows )
 
